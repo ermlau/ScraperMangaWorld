@@ -10,10 +10,6 @@ parser.add_argument('--ptf', metavar='pathTmpfile', default='tmpfile\\',
 
 args = parser.parse_args()
 
-#print('args.url = ' + args.url)
-#print('args.pathCBR = ' + args.pathCBR)
-#print('args.pathTmpfile = ' + args.pathTmpfile)
-
 ScrapLib.downloadCBR(args.url, args.pathCBR, args.pathTmpfile)
 
 print('Download terminato')

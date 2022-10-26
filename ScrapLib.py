@@ -25,8 +25,6 @@ def downloadCBR(url,pathCbr,pathImgTmp):
     # clicco sull'eventuale bottone dei cookie
     WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="ACCETTO"]'))).click()
 
-    #r = SalvoEVadoAvanti(driver, pathCbr, pathImgTmp)
-
     while True:
         r = SalvoEVadoAvanti(driver, pathCbr, pathImgTmp)
         if not r:
