@@ -17,7 +17,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 def downloadCBR(url,pathCbr,pathImgTmp):
     options = Options()
-    options.headless = True
+    #options.headless = True
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     driver.get(url)
@@ -26,7 +26,7 @@ def downloadCBR(url,pathCbr,pathImgTmp):
     WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="ACCETTO"]'))).click()
 
     while True:
-        r = SalvoEVadoAvanti(driver, pathCbr, pathImgTmp)
+        r = SalvoEVadoAvanti(driver, pathCbr+'\\', pathImgTmp+'\\')
         if not r:
             break  # ho finito le pagine
 
